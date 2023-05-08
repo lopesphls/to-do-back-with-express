@@ -2,6 +2,8 @@
   "compilerOptions": {    
     "target": "es2016",    
     "esModuleInterop": true, 
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
