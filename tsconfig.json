@@ -1,7 +1,7 @@
 {
-  "compilerOptions": {    
-    "target": "es2016",    
-    "esModuleInterop": true, 
+  "compilerOptions": {
+    "target": "es2016",
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
@@ -9,10 +9,10 @@
     "moduleResolution": "node",
     "noEmit": true,
     "outDir": "dist/",
-    "forceConsistentCasingInFileNames": true, 
-    "strict": true,        
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules",]  
+  "include": [".eslintrc.js", "src/**/*"],
+  "exclude": ["node_modules",]
 }

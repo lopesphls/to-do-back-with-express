@@ -1,20 +1,28 @@
+import 'dotenv/config';
+import express, { Request, Response, json, urlencoded } from 'express';
+import 'reflect-metadata';
+import { AppDataSource } from './database/dataSource';
 
-import express, { Request, Response, json, urlencoded } from 'express'
-import 'reflect-metadata'
+function Server() {
+  const app = express();
 
-function Server(){
-const app = express()
+  const port = process.env.PORT || 3000;
 
-const port = process.env.PORT || 3000
+  app.use(urlencoded({ extended: true }));
+  app.use(json());
 
-app.get('/', ((req: Request,res:Response)=> {return res.json('funcionando')}))
+  app.get('/', (req: Request, res: Response) => res.json('funcionando'));
 
-app.use(urlencoded({extended:true}))
-app.use(json())
+  AppDataSource.initialize()
+    .then(() => {
+      console.log('Data Source has been initialized!');
+    })
+    .catch(err => {
+      console.error('Error during Data Source initialization', err);
+    });
 
-
-app.listen(port, ()=>{
-    console.log(`servidor rodando em http://localhost:${port}`)
-})
+  app.listen(port, () => {
+    console.log(`servidor rodando em http://localhost:${port}`);
+  });
 }
-Server()
+Server();
