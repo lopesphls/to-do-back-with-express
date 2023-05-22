@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev src/server.ts"
+    "start": "ts-node-dev src/server.ts",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration": "typeorm-ts-node-commonjs migration:run -d ./src/database/dataSource.ts"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

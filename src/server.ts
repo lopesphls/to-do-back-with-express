@@ -15,14 +15,14 @@ function Server() {
 
   AppDataSource.initialize()
     .then(() => {
-      console.log('Data Source has been initialized!');
+      console.log('Database rodando');
+      app.listen(port, () => {
+        console.log(`servidor rodando em http://localhost:${port}`);
+      });
     })
-    .catch(err => {
-      console.error('Error during Data Source initialization', err);
+    .catch(error => {
+      console.error(error);
     });
-
-  app.listen(port, () => {
-    console.log(`servidor rodando em http://localhost:${port}`);
-  });
 }
+
 Server();

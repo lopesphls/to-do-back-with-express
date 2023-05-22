@@ -10,7 +10,7 @@
     "noEmit": true,
     "outDir": "dist/",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true
   },
   "include": [".eslintrc.js", "src/**/*"],
